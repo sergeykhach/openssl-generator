@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSL Certificate Generator</title>
+</head>
+<body>
+    <label>Country Name (2 letter code) [AU]:<label>
+    <input id="countryname" type="text">
+    <br>
+    <label>State or Province Name (full name) [Some-State]:<label>
+    <input id="statename" type="text">
+    <br>
+    <label>Locality Name (eg, city):<label>
+    <input id="localityname" type="text">
+    <br> 
+    <label>Organization Name (eg, company):<label>
+    <input id="organizationname" type="text">
+    <br> 
+    <label>Common Name (e.g. server FQDN or YOUR name):<label>
+    <input id="commonname" type="text">
+    <br> 
+    <label>Email Address:<label>
+    <input id="email" type="text">
+    <br>  
+    <label>RSA Key Size:<label>
+    <select id="keysize" name="menu" size="1">
+    <option selected="selected" value="2048">2048</option>
+    <option value="3072">3072</option>
+    <option value="4096">4096</option>
+    <option value="6144">6144</option>
+    <option value="8192">8192</option>   
+    </select>
+    <br> 
+    <button id="jsonbtn" >Click to convert input to JSON</button>
+    <p id="jsontext"></p>
+    <script src="script.js"></script>
+</body>
+</html>
