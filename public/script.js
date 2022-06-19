@@ -1,3 +1,5 @@
+import { exec } from "child_process";
+
 countryname = document.getElementById("countryname")
 statename = document.getElementById("statename")
 localityname= document.getElementById("localityname")
@@ -18,7 +20,26 @@ jsonBtn.addEventListener("click", function(){
         "email":email.value,
         "keysize":keysize.value
     }
-     jsonText.innerText = JSON.stringify(data, undefined, 2)
+     jsonText.innerText = JSON.stringify(data, undefined, 2);
+    
+     
+    const RSA = "2048";
+    const fileCsr = "nor.csr";
+
+    function execProcess(){
+    exec(
+        `openssl req -new -newkey rsa:${RSA} -nodes -out ${fileCsr} -keyout hhhg.key -subj "/C=AM/ST=yerevan/L=yerevan/O=ggjgjgj/OU=vjhv/CN=hhhg"`,
+        (error, stdout, stderr) => {
+            if (error) {
+                console.error(`exec error: ${error}`);
+                return;
+            }
+            console.log(`stdout: ${stdout}`);
+            console.error(`stderr: ${stderr}`);
+        }
+    );
+    }
+    execProcess('node -v')
 })
 /*
 
